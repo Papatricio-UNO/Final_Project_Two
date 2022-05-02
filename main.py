@@ -1,16 +1,45 @@
-# This is a sample Python script.
+# Hangman game based on NeuralNine's video: https://youtu.be/5x6iAKdJB6U
+# Ideas for tweaking: Add error exceptions for integers, words, etc & retry option
 
-# Press ⌃R to execute it or replace it with your code.
-# Press Double ⇧ to search everywhere for classes, files, tool windows, actions, and settings.
+import random
+
+with open('wordlist.txt', 'r') as f:
+    words = f.readlines()
+
+word = random.choice(words)[:-1]
 
 
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press ⌘F8 to toggle the breakpoint.
+def main():
+    allowed_errors = 14
+    guesses = []
+    done = False
+
+    while not done:
+        for letter in word:
+            if letter.lower() in guesses:
+                print(letter, end=" ")
+            else:
+                print("_", end=" ")
+        print("")
+        done = True
+
+        guess = input(f"Allowed Errors Left {allowed_errors}, Next Guess: ")
+        guesses.append(guess.lower())
+        if guess.lower() not in word.lower():
+            allowed_errors -= 1
+            if allowed_errors == 0:
+                break
+
+        done = True
+        for letter in word:
+            if letter.lower() not in guesses:
+                done = False
+
+    if done:
+        print(f"You found the word! The word was {word}!")
+    else:
+        print(f"Game Over! The word was {word}.")
 
 
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
-
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+if __name__ == "__main__":
+    main()
