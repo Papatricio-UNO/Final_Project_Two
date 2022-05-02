@@ -1,4 +1,5 @@
 # Hangman game based on NeuralNine's video: https://youtu.be/5x6iAKdJB6U
+# Version with random word selection
 # Ideas for tweaking: Add error exceptions for integers, words, etc & retry option
 
 import random
