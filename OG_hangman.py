@@ -1,3 +1,5 @@
+# Original coding of Hangman by Kite
+
 import random
 from words import word_list
 
