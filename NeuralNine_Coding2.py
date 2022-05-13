@@ -37,7 +37,7 @@ def play(word):
                       f"Allowed Errors: {allowed_errors} \n"
                       "Guess a letter to find that word: ")
         while guess in guesses or len(guess) != 1:
-            if len(guess) != 1:
+            if len(guess) != 1 or guess != int:
                 prompt(word, guesses)
                 print("Invalid input. Please enter one character.")
                 guess = input(f"Allowed Errors: {allowed_errors} \n"
