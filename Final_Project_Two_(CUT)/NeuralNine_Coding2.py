@@ -3,9 +3,10 @@
 # Kite's coding from GitHub: https://github.com/kiteco/python-youtube-code/tree/master/build-hangman-in-python
 
 # Modified Version of NeuralNine's coding with random word selection
-# Additions: A retry option with new words after finishing game
-# and accounting for incorrect guessed letters where
+# Additions: A retry option with new words after finishing the game
+# management for incorrect guessed letters where
 # no errors are added when the same wrong letter is repeated
+# as well as for entering integers or more than one letter.
 
 import random
 from hangman_words import word_selection
