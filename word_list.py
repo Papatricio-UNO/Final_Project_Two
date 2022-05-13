@@ -1,3 +1,5 @@
+# py file to store words for Kite_Coding.py
+
 word_list = [
     'wares',
     'soup',
